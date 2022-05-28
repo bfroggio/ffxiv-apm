@@ -89,7 +89,7 @@ body {
 
 /* HP Colors */
 .green {
-  background-color: rgba(38, 214, 70, 0.75);
+  background-color: rgba(139, 195, 74, 0.75);
 }
 .yellow {
   background-color: rgba(201, 204, 36, 0.75);
@@ -98,12 +98,13 @@ body {
   background-color: rgba(239, 151, 43, 0.75);
 }
 .red {
-  background-color: rgba(255, 45, 45, 0.75);
+  background-color: rgba(244, 67, 54, 0.75);
 }
+
 
 /* Role Colors */
 .TANK {
-  background-color: rgba(52, 67, 150, 0.75);
+  background-color: rgba(33, 150, 243, 0.75);
 }
 .HEALER {
   background-color: rgba(57, 101, 39, 0.75);

@@ -126,6 +126,11 @@ Vue.filter('hppercent', function(entity) {
 });
 
 Vue.filter('hatecolor', function(entity) {
+  console.log(entity);
+  if (entity.Target.isMe) {
+    return 'green';
+  }
+
   if (entity.HateRate == 100) return 'red';
   if (entity.HateRate > 75) return 'orange';
   if (entity.HateRate > 50) return 'yellow';

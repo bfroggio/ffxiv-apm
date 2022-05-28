@@ -35,7 +35,7 @@ body {
   background-color: rgba(211, 211, 211, 0.75);
 }
 .YOU {
-  background-color: rgba(255, 247, 0, 0.75);
+  background-color: rgba(139, 195, 74, 0.75);
 }
 
 th {
@@ -118,7 +118,6 @@ td {
 }
 
 #combatants {
-  table-layout: auto;
   width: 100%;
   border-collapse: collapse;
 }
@@ -133,11 +132,18 @@ td {
   /* white-space: nowrap; */
   text-overflow: ellipsis;
   max-width: 20ex;
+  width: 20ex;
   padding: 0px;
 }
 
 #combatants thead {
   border-bottom: 1px solid #ded7be;
+}
+
+#combatants td.hp {
+  white-space: nowrap;
+  min-width: 55px;
+  width: 55px;
 }
 
 #combatants td.hate {
