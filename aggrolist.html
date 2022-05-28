@@ -23,23 +23,20 @@
               <th class="test-center">Target</th>
             </tr>
           </thead>
-          <!-- Table Body -->
           <tbody class="blue">
             <!-- Vue Repeat Template -->
             <template v-repeat="combatant: combatants">
-              <tr class="{{combatant.isCurrentTarget ? '' : ''}}">
+              <tr>
                 <!-- Name & HPP -->
                 <td class="text-left">
-                    <span >{{combatant.isCurrentTarget ? "▶" : ""}}</span >
-                            <span
-                              class="content"
-                              style="text-overflow: ellipsis"
-                              >{{combatant.Name}}</span
-                            >
-                          </td>
+                  <span>{{combatant.isCurrentTarget ? "▶" : ""}}</span>
+                  <span class="content" style="text-overflow: ellipsis"
+                    >{{combatant.Name}}</span
+                  >
+                </td>
                 <td class="hp text-center">
-                      <span >{{combatant | hppercent | round}}%</span >
-                  </td>
+                  <span>{{combatant | hppercent | round}}%</span>
+                </td>
 
                 <!-- Hate -->
                 <td class="hate text-center">
@@ -58,7 +55,6 @@
             <!-- end of Vue Repeat Template -->
           </tbody>
         </table>
-        <!-- end of Combatant Table -->
       </div>
     </div>
 
