@@ -103,14 +103,6 @@ let hpPercentString = (entity) => {
   return ((100.0 * entity.CurrentHP) / entity.MaxHP).toFixed(2);
 };
 
-Vue.filter("hpcolor", function (entity) {
-  let percent = (100.0 * entity.CurrentHP) / entity.MaxHP;
-  if (percent > 75) return "green";
-  if (percent > 50) return "yellow";
-  if (percent > 25) return "orange";
-  return "red";
-});
-
 Vue.filter("hppercent", function (entity) {
   return hpPercentString(entity);
 });
@@ -122,8 +114,7 @@ Vue.filter("hatecolor", function (entity) {
 
   if (entity.HateRate == 100) return "red";
   if (entity.HateRate > 75) return "orange";
-  if (entity.HateRate > 50) return "yellow";
-  return "green";
+  return "yellow";
 });
 
 Vue.filter("you", function (entity) {

@@ -165,7 +165,10 @@ td {
   padding: 1px 1px 1px 1px;
 }
 
-.green, .YOU {
+.YOU {
+  background-color: rgba(251, 216, 251, 0.75);
+}
+.green {
   background-color: rgba(139, 195, 74, 0.75);
 }
 .yellow {
