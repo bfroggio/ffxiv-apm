@@ -20,16 +20,25 @@ body {
 
 /* Role Colors */
 .TANK {
-  background-color: rgba(52, 67, 150, 0.5);
+  background-color: rgba(244, 67, 54, 0.5);
 }
 .HEALER {
-  background-color: rgba(57, 101, 39, 0.5);
+  background-color: rgba(139, 195, 74, 0.5);
 }
 .DPS {
-  background-color: rgba(101, 50, 50, 0.5);
+  background-color: rgba(244, 67, 54, 0.5);
 }
+
+.YOU {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.green {
+  background-color: rgba(139, 195, 74, 0.5);
+}
+.red,
+.UNKNOWN,
 .Pet {
-  background-color: rgba(150, 147, 52, 0.5);
+  background-color: rgba(244, 67, 54, 0.5);
 }
 
 th {
@@ -160,23 +169,6 @@ td {
   width: 100%;
   margin: 1px 0px 1px 0px;
   padding: 1px 1px 1px 1px;
-}
-
-.YOU {
-  background-color: rgba(251, 216, 251, 0.5);
-}
-.green {
-  background-color: rgba(139, 195, 74, 0.5);
-}
-.yellow {
-  background-color: rgba(201, 204, 36, 0.5);
-}
-.orange {
-  background-color: rgba(239, 151, 43, 0.5);
-}
-.red,
-.UNKNOWN {
-  background-color: rgba(244, 67, 54, 0.5);
 }
 
 #combatants tr.current {
