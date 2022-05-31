@@ -25,7 +25,9 @@ let aggrolist = new Vue({
       this.combatants = enmity.AggroList || [];
 
       // Sort by aggro, descending.
-      this.combatants.sort((a, b) => b.HateRate - a.HateRate);
+      this.combatants.sort((a, b) => b.HateRate - a.HateRate)
+
+      this.combatants = this.combatants.filter(combatant => combatant.Target.isMe != true);
     },
     updateState: function (e) {
       this.locked = e.detail.isLocked;

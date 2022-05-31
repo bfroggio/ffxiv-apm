@@ -7,7 +7,7 @@
 
   <body id="aggrolist">
     <!-- outer -->
-    <div class="outer {{hide ? 'hide' : ''}}">
+    <div class="outer {{hide ? 'hide' : ''}}" v-show="combatants.length > 0">
       <!-- innner -->
       <div v-if="updated" class="inner">
         <div class="background"></div>
