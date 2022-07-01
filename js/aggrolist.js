@@ -48,7 +48,7 @@ let aggrolist = new Vue({
         }
       }
 
-      console.log(this.combatants);
+      // console.log(this.combatants);
 
       // Sort by apm, descending
       this.combatants.sort((a, b) => b.apm - a.apm);
