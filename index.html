@@ -33,7 +33,7 @@
                 </td>
                 <!-- APM -->
                 <td class="apm text-center">
-                  <span>{{combatant.apm}}</span>
+                  <span>{{combatant.estimate ? "~" : ""}}{{combatant.apm}}</span>
                 </td>
               </tr>
             </template>

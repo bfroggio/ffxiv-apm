@@ -27,31 +27,31 @@ let aggrolist = new Vue({
       console.log(data);
     },
     update: function (data) {
+      // console.log(data);
       this.updated = true;
       this.combatants = [];
 
       for (const [key, value] of Object.entries(data.Combatant)) {
-        var combatant = value;
-        var duration = combatant.DURATION;
-        var modifier = 1;
+        var data = value;
 
-        if (combatant.DURATION < 60) {
-          modifier = 60 / combatant.DURATION;
-        } else {
-          modifier = combatant.DURATION / 60;
-        }
-
-        var apm = combatant.swings * modifier / combatant.DURATION;
+        var apm = data.swings / (data.DURATION / 60);
 
         if (apm < Infinity) {
-          this.combatants.push({name: key, apm: apm.toFixed(1)});
-        }
+          var player = {
+            name: key,
+            swings: data.swings,
+            apm: apm.toFixed(1),
+            estimate: data.DURATION < 60,
+          };
 
-        console.log(this.combatants);
+          this.combatants.push(player);
+        }
       }
 
+      console.log(this.combatants);
+
       // Sort by apm, descending
-      this.combatants.sort((a, b) => b.apm - a.apm)
+      this.combatants.sort((a, b) => b.apm - a.apm);
     },
     updateState: function (e) {
       this.locked = e.detail.isLocked;
