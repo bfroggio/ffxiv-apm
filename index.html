@@ -1,7 +1,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>aggrolist</title>
+    <title>apm</title>
     <link rel="stylesheet" href="css/aggrolist.css" />
   </head>
 
@@ -18,9 +18,7 @@
           <thead class="gold">
             <tr>
               <th class="text-center">Name</th>
-              <th class="text-center">HP</th>
-              <th class="test-center">Target</th>
-              <th class="text-center">Hate</th>
+              <th class="text-center">APM</th>
             </tr>
           </thead>
           <tbody class="blue">
@@ -29,26 +27,13 @@
               <tr>
                 <!-- Name -->
                 <td class="text-left">
-                  <span>{{combatant.isCurrentTarget ? "▶" : ""}}</span>
                   <span class="content" style="text-overflow: ellipsis"
-                    >{{combatant.Name}}</span
+                    >{{combatant.name}}</span
                   >
                 </td>
-                <!-- HP -->
-                <td class="hp text-center">
-                  <span>{{combatant | hppercent | round}}%</span>
-                </td>
-                <!-- Target -->
-                <td class="target text-center">
-                  <div class="target {{combatant.Target | jobrole}}">
-                    {{combatant.Target | jobname}}
-                  </div>
-                </td>
-                <!-- Hate -->
-                <td class="hate text-center">
-                  <div class="hate {{combatant | hatecolor}}">
-                    <span>{{combatant.HateRate}}%</span>
-                  </div>
+                <!-- APM -->
+                <td class="apm text-center">
+                  <span>{{combatant.apm}}</span>
                 </td>
               </tr>
             </template>

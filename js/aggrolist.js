@@ -10,7 +10,10 @@ let aggrolist = new Vue({
     hide: false,
   },
   attached: function () {
-    window.addOverlayListener("EnmityAggroList", this.update);
+    window.addOverlayListener("CombatData", this.update);
+    // window.addOverlayListener("PartyChanged", this.test);
+    // window.addOverlayListener("LogLine", this.test);
+    // window.addOverlayListener("EnmityAggroList", this.test);
     document.addEventListener("onOverlayStateUpdate", this.updateState);
     document.addEventListener("onExampleShowcase", this.showExample);
     window.startOverlayEvents();
@@ -20,14 +23,35 @@ let aggrolist = new Vue({
     document.removeEventListener("onOverlayStateUpdate", this.updateState);
   },
   methods: {
-    update: function (enmity) {
+    test: function (data) {
+      console.log(data);
+    },
+    update: function (data) {
       this.updated = true;
-      this.combatants = enmity.AggroList || [];
+      this.combatants = [];
 
-      // Sort by aggro, descending.
-      this.combatants.sort((a, b) => b.HateRate - a.HateRate)
+      for (const [key, value] of Object.entries(data.Combatant)) {
+        var combatant = value;
+        var duration = combatant.DURATION;
+        var modifier = 1;
 
-      this.combatants = this.combatants.filter(combatant => combatant.Target.isMe != true);
+        if (combatant.DURATION < 60) {
+          modifier = 60 / combatant.DURATION;
+        } else {
+          modifier = combatant.DURATION / 60;
+        }
+
+        var apm = combatant.swings * modifier / combatant.DURATION;
+
+        if (apm < Infinity) {
+          this.combatants.push({name: key, apm: apm.toFixed(1)});
+        }
+
+        console.log(this.combatants);
+      }
+
+      // Sort by apm, descending
+      this.combatants.sort((a, b) => b.apm - a.apm)
     },
     updateState: function (e) {
       this.locked = e.detail.isLocked;
