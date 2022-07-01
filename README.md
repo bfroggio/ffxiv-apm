@@ -1,3 +1,3 @@
-# ffxiv-aggrolist
+# ffxiv-apm
 
-Slight tweaks to a default aggrolist overlay. Better font and, eventually, improved colors and orientation.
+A simple overlay that makes a rough estimation of actions per minute (APM) per player character while in combat.
