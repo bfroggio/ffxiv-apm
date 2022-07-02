@@ -98,7 +98,7 @@ td {
 
 #aggrolist .inner {
   position: absolute;
-  bottom: 10px;
+  top: 10px;
   left: 10px;
   width: calc(100% - 20px);
   padding: 10px;
