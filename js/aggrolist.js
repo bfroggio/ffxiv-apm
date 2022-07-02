@@ -34,11 +34,12 @@ let aggrolist = new Vue({
       for (const [key, value] of Object.entries(data.Combatant)) {
         var data = value;
 
-        var apm = data.swings / (data.DURATION / 60);
+        var apm = (data.swings + data.heals) / (data.DURATION / 60);
 
         if (apm < Infinity) {
           var player = {
             name: key,
+            heals: data.heals,
             swings: data.swings,
             apm: apm.toFixed(1),
             estimate: data.DURATION < 60,
